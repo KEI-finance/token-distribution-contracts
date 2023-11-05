@@ -4,3 +4,6 @@
 [submodule "lib/testing-lib"]
 	path = lib/testing-lib
 	url = https://github.com/kei-finance/testing-lib
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
