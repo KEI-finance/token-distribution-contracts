@@ -9,4 +9,4 @@ lib
 !out/**/*
 !src/**/*
 !broadcast/**/*
-!networks.json
+!deployments.json

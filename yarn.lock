@@ -235,10 +235,10 @@ foreground-child@^3.1.0:
     cross-spawn "^7.0.0"
     signal-exit "^4.0.1"
 
-forge-utils@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/forge-utils/-/forge-utils-0.0.12.tgz#e8dc898c6a7efa9a3c6cc1c79bdb6be922d827b7"
-  integrity sha512-mveDC8Xi7byjtImBl3oiY6J8j3vKC6MUJUT3Pt78kUd3waI6YItstpU4Srwu37ozooRYXYABg5Y8qBlJgvCW+A==
+forge-utils@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/forge-utils/-/forge-utils-0.0.13.tgz#6ea7c8c25889d33336315d0155fa1ed2c26aa785"
+  integrity sha512-SnIXyCnO9FYdnVVGv3LguaoK7OaLxV3IGsXRSHrKuhBgbm2q4OD4DKA9GiPU3hGYJGQyCZzC7l0wPkhXTHYw8w==
   dependencies:
     glob "^10.3.10"
     yargs "^17.7.2"
