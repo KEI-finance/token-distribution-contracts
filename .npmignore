@@ -1,0 +1,11 @@
+*
+lib
+!README.md
+!yarn.lock
+!deployments.json
+!package.json
+!typechain-v5/**/*
+!typechain-v6/**/*
+!out/**/*
+!src/**/*
+!broadcast/**/*

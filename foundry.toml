@@ -18,3 +18,15 @@ quote_style = 'double'
 number_underscore = 'preserve'
 single_line_statement_blocks = 'preserve'
 ignore = ["src/console.sol", "src/console2.sol"]
+
+[rpc_endpoints]
+goerli = "https://goerli.infura.io/v3/${INFURA_API_KEY}"
+mainnet = "https://mainnet.infura.io/v3/${INFURA_API_KEY}"
+arbitrum = "https://arbitrum-mainnet.infura.io/v3/${INFURA_API_KEY}"
+arbitrum_goerli = "https://arbitrum-goerli.infura.io/v3/${INFURA_API_KEY}"
+
+[etherscan]
+goerli = { key = "${ETHERSCAN_API_KEY}" }
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+arbitrum = { key = "${ARBISCAN_API_KEY}" }
+arbitrum_goerli = { key = "${ARBISCAN_API_KEY}" }
