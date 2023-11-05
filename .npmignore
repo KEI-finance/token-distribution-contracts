@@ -1,5 +1,5 @@
 *
-lib
+lib/**/*
 !README.md
 !yarn.lock
 !deployments.json
