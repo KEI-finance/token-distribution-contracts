@@ -1,9 +1,24 @@
 {
   "name": "@kei.fi/contracts-template",
   "version": "0.0.1",
-  "main": "index.js",
   "author": "KEI finance",
   "license": "UNLICENSED",
+  "exports": {
+    "./typechain-v6": {
+      "import": "./typechain-v6/index.js",
+      "require": "./typechain-v6/index.js",
+      "typings": "./typechain-v6/index.d.ts"
+    },
+    "./typechain-v5": {
+      "import": "./typechain-v5/index.js",
+      "require": "./typechain-v5/index.js",
+      "typings": "./typechain-v5/index.d.ts"
+    },
+    "./deployments.json": {
+      "import": "./deployments.json",
+      "require": "./deployments.json"
+    }
+  },
   "scripts": {
     "deploy": "forge script script/Deploy.s.sol:DeployScript --broadcast --verify -vvvv --rpc-url",
     "compile": "(tsc > /dev/null 2>&1 || true)",
