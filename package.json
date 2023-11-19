@@ -5,14 +5,14 @@
   "license": "UNLICENSED",
   "exports": {
     "./typechain/ethers-v6": {
-      "import": "./typechain-v6/index.js",
-      "require": "./typechain-v6/index.js",
-      "typings": "./typechain-v6/index.d.ts"
+      "import": "./typechain/ethers-v6/index.js",
+      "require": "./typechain/ethers-v6/index.js",
+      "typings": "./typechain/ethers-v6/index.d.ts"
     },
     "./typechain/ethers-v5": {
-      "import": "./typechain-v5/index.js",
-      "require": "./typechain-v5/index.js",
-      "typings": "./typechain-v5/index.d.ts"
+      "import": "./typechain/ethers-v5/index.js",
+      "require": "./typechain/ethers-v5/index.js",
+      "typings": "./typechain/ethers-v5/index.d.ts"
     },
     "./deployments.json": {
       "import": "./deployments.json",
