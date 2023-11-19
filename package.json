@@ -23,8 +23,8 @@
     "deploy": "forge script script/Deploy.s.sol:DeployScript --broadcast --verify -vvvv --rpc-url",
     "compile": "(tsc > /dev/null 2>&1 || true)",
     "typechain:clean": "rm -rf typechain",
-    "typechain:v5": "typechain --target ethers-v6 --out-dir typechain-v6 \"./out/**/*.json\" --show-stack-traces",
-    "typechain:v6": "typechain --target ethers-v5 --out-dir typechain-v5 \"./out/**/*.json\" --show-stack-traces",
+    "typechain:v5": "typechain --target ethers-v6 --out-dir typechain/ethers-v6 \"./out/**/*.json\" --show-stack-traces",
+    "typechain:v6": "typechain --target ethers-v5 --out-dir typechain/ethers-v5 \"./out/**/*.json\" --show-stack-traces",
     "typechain": "pnpm typechain:clean && pnpm typechain:v5 && pnpm typechain:v6 && pnpm compile",
     "prepublish": "forge install && forge build && pnpm typechain && forge-utils deployments"
   },
