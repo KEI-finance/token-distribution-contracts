@@ -4,12 +4,12 @@
   "author": "KEI finance",
   "license": "UNLICENSED",
   "exports": {
-    "./typechain-v6": {
+    "./typechain/ethers-v6": {
       "import": "./typechain-v6/index.js",
       "require": "./typechain-v6/index.js",
       "typings": "./typechain-v6/index.d.ts"
     },
-    "./typechain-v5": {
+    "./typechain/ethers-v5": {
       "import": "./typechain-v5/index.js",
       "require": "./typechain-v5/index.js",
       "typings": "./typechain-v5/index.d.ts"
