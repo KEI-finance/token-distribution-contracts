@@ -4,8 +4,7 @@ lib/**/*
 !yarn.lock
 !deployments.json
 !package.json
-!typechain-v5/**/*
-!typechain-v6/**/*
+!typechain/**/*
 !out/**/*
 !src/**/*
 !broadcast/**/*
