@@ -2,11 +2,9 @@
 pragma solidity ^0.8.13;
 
 import {Script, console2, stdJson} from "forge-std/Script.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
 
 abstract contract BaseScript is Script {
     using stdJson for string;
-    using Address for address;
 
     struct DeployConfig {
         bytes32 salt;
@@ -47,7 +45,7 @@ abstract contract BaseScript is Script {
         addr = getAddress(name, args);
         deployments[name] = addr;
 
-        if (!addr.isContract()) {
+        if (addr.code.length == 0) {
             require(deployIfMissing, string.concat('MISSING_CONTRACT_', name));
 
             bytes memory bytecode = abi.encodePacked(vm.getCode(name), args);
