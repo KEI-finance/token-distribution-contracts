@@ -21,6 +21,7 @@
   },
   "scripts": {
     "deploy": "forge script script/Deploy.s.sol:DeployScript --broadcast --verify -vvvv --rpc-url",
+    "deploy:resume": "forge script script/Deploy.s.sol:DeployScript --broadcast --verify --resume -vvvv --rpc-url",
     "compile": "(tsc > /dev/null 2>&1 || true)",
     "typechain:clean": "rm -rf typechain",
     "typechain:v5": "typechain --target ethers-v6 --out-dir typechain/ethers-v6 \"./out/**/*.json\" --show-stack-traces",
