@@ -63,9 +63,8 @@ abstract contract BaseScript is Script {
         string memory path = string.concat(root, "/config.json");
         string memory json = vm.readFile(path);
 
-        Chain memory chain = getChain(block.chainid);
-        string memory key = string.concat(".", chain.chainAlias);
+        string memory key = string.concat(".", vm.toString(block.chainid));
 
-        config.salt = bytes32(json.readUint(string.concat(key, ".salt")));
+//        config.salt = bytes32(json.readUint(string.concat(key, ".salt")));
     }
 }
