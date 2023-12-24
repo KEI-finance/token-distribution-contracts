@@ -17,8 +17,8 @@ devDependencies:
     specifier: ^0.5.1
     version: 0.5.1(ethers@6.8.1)(typechain@8.3.2)(typescript@5.2.2)
   forge-utils:
-    specifier: ^0.0.16
-    version: 0.0.16
+    specifier: ^0.1.1
+    version: 0.1.1
   typechain:
     specifier: ^8.3.2
     version: 8.3.2(typescript@5.2.2)
@@ -543,8 +543,8 @@ packages:
       signal-exit: 4.1.0
     dev: true
 
-  /forge-utils@0.0.16:
-    resolution: {integrity: sha512-mnKeU0LzT2+hhs/H/rJOFVtJ95WPkOd2SWG1MNHesQsnvyNqcpwQjFqiQoIpodADJWEm9W9x//RYS59I+pO1pQ==}
+  /forge-utils@0.1.1:
+    resolution: {integrity: sha512-1B4VWHsjlygqpFxjFCWcNGHFcM1xO4hE0w1eOPuM3Xgvv1lJ1KGDTS4rkavD5IIhc504kwoSWykyV0RMS3JVHw==}
     engines: {node: '>=11'}
     hasBin: true
     dependencies:
