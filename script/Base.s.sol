@@ -26,7 +26,7 @@ abstract contract BaseScript is Script {
 
     function getAddress(string memory name, bytes memory args) internal view returns (address) {
         bytes32 hash = hashInitCode(vm.getCode(name), args);
-        return computeCreate2Address(config.salt, hash);
+        return vm.computeCreate2Address(config.salt, hash);
     }
 
     function deploy(string memory name) internal returns (address addr) {
