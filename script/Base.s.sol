@@ -12,7 +12,7 @@ abstract contract BaseScript is Script {
 
     address public deployer;
     DeployConfig public config;
-    mapping(string => address) public deployments;
+    mapping(string => address) public deployment;
 
     function setUp() public {
         uint256 privateKey = vm.envUint("PRIVATE_KEY");
@@ -43,7 +43,7 @@ abstract contract BaseScript is Script {
 
     function deploy(string memory name, bytes memory args, bool deployIfMissing) internal returns (address addr) {
         addr = getAddress(name, args);
-        deployments[name] = addr;
+        deployment[name] = addr;
 
         if (addr.code.length == 0) {
             require(deployIfMissing, string.concat('MISSING_CONTRACT_', name));

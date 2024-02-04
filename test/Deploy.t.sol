@@ -28,7 +28,7 @@ contract DeployTest is BaseTest {
 
         for (uint256 i; i < expected.length; i++) {
             ExpectDeployment memory expectedDeployment = expected[i];
-            address deployment = script.deployments(expectedDeployment.name);
+            address deployment = script.deployment(expectedDeployment.name);
             assertEq(
                 deployment,
                 expectedDeployment.addr,
