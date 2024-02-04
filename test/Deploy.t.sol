@@ -34,9 +34,9 @@ contract DeployTest is BaseTest {
                 expectedDeployment.addr,
                 string.concat(
                     expectedDeployment.name,
-                    " address has changed. Expected ",
+                    " address has changed. Current Address: ",
                     vm.toString(deployment),
-                    " to equal ",
+                    ". Expected address: ",
                     vm.toString(expectedDeployment.addr)
                 )
             );
