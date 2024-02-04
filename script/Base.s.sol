@@ -11,13 +11,17 @@ abstract contract BaseScript is Script {
     }
 
     address public deployer;
-    DeployConfig public config;
+    DeployConfig internal config;
     mapping(string => address) public deployment;
 
     function setUp() public {
         uint256 privateKey = vm.envUint("PRIVATE_KEY");
         deployer = vm.rememberKey(privateKey);
         loadConfig();
+    }
+
+    function getConfig() public view returns (DeployConfig memory) {
+        return config;
     }
 
     function getAddress(string memory name) internal view returns (address) {
