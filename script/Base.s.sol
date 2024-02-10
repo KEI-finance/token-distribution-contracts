@@ -15,7 +15,7 @@ abstract contract BaseScript is Script {
     mapping(string => address) public deployment;
 
     function setUp() public {
-        uint256 privateKey = vm.envUint("PRIVATE_KEY");
+        uint256 privateKey = vm.envUint(string.concat("PRIVATE_KEY_", vm.toString(block.chainid)));
         deployer = vm.rememberKey(privateKey);
         loadConfig();
     }
