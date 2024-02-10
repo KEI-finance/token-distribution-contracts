@@ -2,7 +2,7 @@
 pragma solidity =0.8.20;
 
 import {console} from "forge-std/Test.sol";
-import {BaseTest} from "testing-lib/BaseTest.sol";
+import {BaseTest} from "@kei.fi/testing-lib/BaseTest.sol";
 
 import {DeployScript} from "script/Deploy.s.sol";
 
