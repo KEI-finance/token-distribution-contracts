@@ -19,7 +19,7 @@ contract DeployTest is BaseTest {
     }
 
     function test_deploy() external {
-        vm.chainId(5);
+        vm.chainId(11155111);
 
         DeployScript script = new DeployScript();
 
