@@ -6,7 +6,7 @@ import {BaseTest} from "@kei.fi/testing-lib/BaseTest.sol";
 
 import {DeployScript} from "script/Deploy.s.sol";
 
-contract DeployTest is BaseTest {
+contract DeployTest is BaseTest, DeployScript {
     struct ExpectDeployment {
         string name;
         address addr;
@@ -14,21 +14,19 @@ contract DeployTest is BaseTest {
 
     ExpectDeployment[] internal expected;
 
-    function setUp() external {
+    function setUp() public virtual override {
+        super.setUp();
         expected.push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
     }
 
     function test_deploy() external {
         vm.chainId(11155111);
 
-        DeployScript script = new DeployScript();
-
-        script.setUp();
-        script.run();
+        run();
 
         for (uint256 i; i < expected.length; i++) {
             ExpectDeployment memory expectedDeployment = expected[i];
-            address deployment = script.deployment(expectedDeployment.name);
+            address deployment = deployment[expectedDeployment.name];
             assertEq(
                 deployment,
                 expectedDeployment.addr,
