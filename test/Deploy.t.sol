@@ -12,20 +12,22 @@ contract DeployTest is BaseTest, DeployScript {
         address addr;
     }
 
-    ExpectDeployment[] internal expected;
+    mapping(uint256 => ExpectDeployment[]) internal expected;
 
     function setUp() public virtual override {
         super.setUp();
-        expected.push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        // forge test network
+        expected[31337].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        // abitrum network
+        expected[42161].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        // sepolia network
+        expected[11155111].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
     }
 
-    function test_deploy() external {
-        vm.chainId(11155111);
-
-        run();
-
-        for (uint256 i; i < expected.length; i++) {
-            ExpectDeployment memory expectedDeployment = expected[i];
+    function assert_deployments() public {
+        ExpectDeployment[] memory deployments = expected[block.chainid];
+        for (uint256 i; i < deployments.length; i++) {
+            ExpectDeployment memory expectedDeployment = deployments[i];
             address deployment = deployment[expectedDeployment.name];
             assertEq(
                 deployment,
@@ -39,5 +41,12 @@ contract DeployTest is BaseTest, DeployScript {
                 )
             );
         }
+    }
+
+    function test_deploy() external {
+        console.log(block.chainid);
+        run();
+
+        assert_deployments();
     }
 }
