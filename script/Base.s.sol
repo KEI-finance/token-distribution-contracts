@@ -74,6 +74,10 @@ abstract contract BaseScript is Script {
 
         string memory key = string.concat(".", vm.toString(block.chainid));
 
+        if (!vm.keyExists(json, key)) {
+            key = string.concat(".11155111"); // use sepolia as a fallback
+        }
+
 //        config.salt = bytes32(json.readUint(string.concat(key, ".salt")));
     }
 }
