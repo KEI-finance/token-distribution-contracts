@@ -17,11 +17,11 @@ contract DeployTest is BaseTest, DeployScript {
     function setUp() public virtual override {
         super.setUp();
         // forge test network
-        expected[31337].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        expected[31337].push(ExpectDeployment("TokenDistributor.sol", 0xce86a54aea50FdC7B21d13a2cF790f1995fa86De));
         // abitrum network
-        expected[42161].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        expected[42161].push(ExpectDeployment("TokenDistributor.sol", 0xd6139CB0899248b10baFbfeAF1CF4370b19E9525));
         // sepolia network
-        expected[11155111].push(ExpectDeployment("AccountSetup.sol", 0x0000000000000000000000000000000000000000));
+        expected[11155111].push(ExpectDeployment("TokenDistributor.sol", 0xce86a54aea50FdC7B21d13a2cF790f1995fa86De));
     }
 
     function assert_deployments() public {

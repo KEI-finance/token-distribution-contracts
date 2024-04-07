@@ -8,6 +8,8 @@ abstract contract BaseScript is Script {
 
     struct DeployConfig {
         bytes32 salt;
+        address admin;
+        address token;
     }
 
     address public deployer;
@@ -17,8 +19,9 @@ abstract contract BaseScript is Script {
     function setUp() public virtual {
         uint256 privateKey;
         if (block.chainid == 31337) {
-            (,privateKey) = makeAddrAndKey('DEPLOYER');
+            (, privateKey) = makeAddrAndKey("DEPLOYER");
         } else {
+            console2.log(vm.envString(string.concat("PRIVATE_KEY_", vm.toString(block.chainid))));
             privateKey = vm.envUint(string.concat("PRIVATE_KEY_", vm.toString(block.chainid)));
         }
         deployer = vm.rememberKey(privateKey);
@@ -55,7 +58,7 @@ abstract contract BaseScript is Script {
         deployment[name] = addr;
 
         if (addr.code.length == 0) {
-            require(deployIfMissing, string.concat('MISSING_CONTRACT_', name));
+            require(deployIfMissing, string.concat("MISSING_CONTRACT_", name));
 
             bytes memory bytecode = abi.encodePacked(vm.getCode(name), args);
             bytes32 salt = config.salt;
@@ -78,6 +81,7 @@ abstract contract BaseScript is Script {
             key = string.concat(".11155111"); // use sepolia as a fallback
         }
 
-//        config.salt = bytes32(json.readUint(string.concat(key, ".salt")));
+        config.token = json.readAddress(string.concat(key, ".token"));
+        config.admin = json.readAddress(string.concat(key, ".admin"));
     }
 }
